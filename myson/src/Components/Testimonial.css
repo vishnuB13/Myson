@@ -1,0 +1,74 @@
+/* Container for the testimonial section */
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  /* Testimonial card with image and text */
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: scale(1.05); /* Adds a slight zoom effect on hover */
+  }
+  
+  /* Styling the image */
+  .testimonial-image img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  /* Text inside the testimonial */
+  .testimonial-content {
+    padding: 1rem;
+  }
+  
+  .testimonial-text {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  
+  /* Author of the testimonial */
+  .testimonial-author {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #007bff;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .testimonial-card {
+      padding: 1rem;
+    }
+  
+    .testimonial-text {
+      font-size: 0.9rem;
+    }
+  
+    .testimonial-author {
+      font-size: 1rem;
+    }
+  
+    .testimonial-image img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  

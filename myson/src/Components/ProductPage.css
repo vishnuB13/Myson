@@ -1,0 +1,57 @@
+.product-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .product-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%; /* Left side takes 40% width */
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-details {
+    width: 50%; /* Right side takes 50% width */
+  }
+  
+  .product-description {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  
+  .product-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .add-to-cart-btn, .enquire-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .product-page {
+      flex-direction: column; /* Stack images and details vertically */
+      align-items: center;
+    }
+  
+    .product-images, .product-details {
+      width: 100%;
+    }
+  }
+  

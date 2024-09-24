@@ -4,12 +4,12 @@ import './Testimonial.css'; // Import the CSS file
 const Testimonial = () => {
   return (
     <>
-    <h3 >Our Customer Loves Us</h3>
-    <div style={{display:'flex', borderBottom:'solid 1px #d6252b '}}>
+    <h3 >Our Customers Love Us !</h3>
+    <div style={{display:'flex'}}>
         <div className="testimonial-container">
       <div className="testimonial-card">
         <div className="testimonial-image">
-          <img src="https://via.placeholder.com/150" alt="User" />
+          <h3>Mr.ALAN</h3>
         </div>
         <div className="testimonial-content">
           <p className="testimonial-text">
@@ -21,7 +21,7 @@ const Testimonial = () => {
     </div><div className="testimonial-container">
       <div className="testimonial-card">
         <div className="testimonial-image">
-          <img src="https://via.placeholder.com/150" alt="User" />
+          <h3>Mrs.JULIET</h3>
         </div>
         <div className="testimonial-content">
           <p className="testimonial-text">
@@ -33,7 +33,7 @@ const Testimonial = () => {
     </div><div className="testimonial-container">
       <div className="testimonial-card">
         <div className="testimonial-image">
-          <img src="https://via.placeholder.com/150" alt="User" />
+          <h3>Mr.FELIX</h3>
         </div>
         <div className="testimonial-content">
           <p className="testimonial-text">

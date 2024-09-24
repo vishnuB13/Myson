@@ -7,8 +7,8 @@ const CategoryComponents = () => {
         display: 'flex',
         justifyContent: 'space-evenly',
         padding: '10px',
-        borderBottom: '1px solid red',
-        boxShadow: '0.5px 1px 1.5px 0px red',
+        borderBottom: '5px solid whitesmoke',
+        boxShadow: '0.5px 0.5px 1.5px 1px whitesmoke',
         overflowX: 'auto', // Enable horizontal scrolling
         whiteSpace: 'nowrap', // Prevents items from wrapping onto the next line
       }}

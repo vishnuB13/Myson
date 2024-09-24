@@ -42,7 +42,8 @@
 
 .black-text{
   color: black;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: medium;
 }
 h6{
   color: #d6252b;
@@ -88,6 +89,15 @@ ul{
 li{
 margin: 5px;
 font: bolder;
+color: black;
+  font-weight: 500;
+  font-size: medium;
+}
+
+p{
+  color: black;
+  font-weight: 600;
+  font-size: medium;
 }
 
 @media (max-width: 768px) {
@@ -122,4 +132,72 @@ h3{
     box-shadow: solid 1px #d6252b;
     margin-top: 5px;
   }
+  /* Styling for all Nav.Link elements */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Add space between the icon and text */
+}
+
+/* Common styles */
+.category-list {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  list-style-type: none;
+  padding: 0;
+  justify-content: space-evenly; /* Distributes items evenly */
+  margin: 0;
+}
+
+.category-list li {
+  margin-right: 10px;
+}
+
+.separator {
+  margin: 0 10px;
+  color: wheat;
+}
+
+/* Responsive styles for small devices */
+@media (max-width: 768px) {
+  .category-list {
+    justify-content: flex-start; /* Align items to the start */
+    padding: 0 10px;
+  }
+
+  .category-list li {
+    margin: 5px 5px; /* Adjust spacing for smaller screens */
+    font-size: 14px;  /* Smaller font size for mobile */
+  }
+
+  .separator {
+    margin: 0 5px;
+  }
+}
+
+/* Responsive styles for very small devices */
+@media (max-width: 480px) {
+  .category-list {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+  }
+
+  .category-list li {
+    margin-bottom: 10px;
+  }
+
+  .separator {
+    display: none; /* Hide separators on very small screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
 

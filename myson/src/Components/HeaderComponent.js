@@ -43,42 +43,42 @@ const HeaderComponent = () => {
 
           {/* Search Bar */}
           <div
-            className='searchbar'
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '10px 0',
-            }}
-          >
-            <input
-              style={{
-                border: 'none',
-                width: '100%',
-                maxWidth: '500px',
-                borderRadius: '5px',
-                backgroundColor: 'whitesmoke',
-                padding: '10px',
-              }}
-              placeholder='Search For Products ...'
-            />
-            <button
-              style={{
-                backgroundColor: '#d86f70',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                marginLeft: '-8px',
-                padding: '10px',
-                color: 'white',
-                width: '45px'
+  className='searchbar'
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    padding: '10px 0',
+  }}
+>
+  <input
+    style={{
+      border: 'none',
+      width: '100%',
+      maxWidth: '500px',
+      borderRadius: '5px',
+      backgroundColor: 'whitesmoke',
+      padding: '10px',
+    }}
+    placeholder='Search For Products ...'
+  />
+  <button
+    style={{
+      backgroundColor: '#d86f70',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      marginLeft: '-8px',
+      padding: '10px',
+      color: 'white',
+      width: '45px'
+    }}
+  >
+    <FontAwesomeIcon icon={faSearch} />
+  </button>
+</div>
 
-              }}
-            >
-              <FontAwesomeIcon icon={faSearch} />
-            </button>
-          </div>
 
 
           {/* Menu */}

@@ -4,7 +4,7 @@ import { faFacebook, faTwitter, faYoutube, faLinkedin, faInstagram } from '@fort
 
 const FooterComponent = () => {
   return (
-    <footer style={{  padding: '20px 0' }}>
+    <footer style={{  padding: '0px 0px' }}>
       <div id='last' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '30px' }}>
 
         {/* Logo and description on the left */}
@@ -45,7 +45,7 @@ const FooterComponent = () => {
     <li style={{ marginBottom: '8px' }}>www.myson.in</li>
     <li style={{ marginBottom: '8px' }}>
       
-        <ul style={{ listStyle: 'none', paddingLeft: 0, display: 'flex', gap: '10px', alignItems: 'center', marginLeft:'140px', marginTop:'25px' }}>
+        <div style={{ listStyle: 'none', gap: '10px',display:'flex', marginTop:'25px',justifyContent:'center' }}>
           <li>
             <FontAwesomeIcon icon={faFacebook} style={{ color: 'black' }} />
           </li>
@@ -61,7 +61,7 @@ const FooterComponent = () => {
           <li>
             <FontAwesomeIcon icon={faInstagram} style={{ color: 'black' }} />
           </li>
-        </ul>
+        </div>
     </li>
   </ul>
 </section>

@@ -1,74 +1,51 @@
-/* Container for the testimonial section */
 .testimonial-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    background-color: white;
+  flex: 1; /* Allow the container to take up available space */
+  margin: 20px;
+}
+
+.testimonial-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial-image h3 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.testimonial-content {
+  margin-top: 15px;
+}
+
+.testimonial-text {
+  font-size: 1em;
+  color: #555;
+}
+
+.testimonial-author {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    flex: 1 1 100%; /* Stack the testimonial cards on top of each other */
+    margin-bottom: 20px;
   }
-  
-  /* Testimonial card with image and text */
-  .testimonial-card {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease;
+}
+
+@media (min-width: 769px) {
+  .testimonial-container {
+    flex: 1 1 30%; /* Show 3 cards side by side on larger screens */
   }
-  
-  .testimonial-card:hover {
-    transform: scale(1.05); /* Adds a slight zoom effect on hover */
-  }
-  
-  /* Styling the image */
-  .testimonial-image img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 1rem;
-  }
-  
-  /* Text inside the testimonial */
-  .testimonial-content {
-    padding: 1rem;
-  }
-  
-  .testimonial-text {
-    font-size: 1rem;
-    color:#848080;
-    margin-bottom: 1rem;
-    font-style: italic;
-  }
-  
-  /* Author of the testimonial */
-  .testimonial-author {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #007bff;
-  }
-  
-  /* Responsive styling */
-  @media (max-width: 768px) {
-    .testimonial-card {
-      padding: 1rem;
-    }
-  
-    .testimonial-text {
-      font-size: 0.9rem;
-    }
-  
-    .testimonial-author {
-      font-size: 1rem;
-    }
-  
-    .testimonial-image img {
-      width: 80px;
-      height: 80px;
-    }
-  }
-  
+}

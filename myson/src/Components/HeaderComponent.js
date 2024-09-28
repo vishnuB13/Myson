@@ -18,7 +18,7 @@ const HeaderComponent = () => {
           flexDirection: 'column',
           backgroundColor: 'white',
           borderBottom: "solid 5px whitesmoke",
-          padding: '10px',
+          padding: '10px 30px',
           margin: '0 50px',
         }}
       >

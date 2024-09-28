@@ -30,38 +30,42 @@
 
 
 
-.black-text{
+.black-text {
   color: black;
   font-weight: 500;
   font-size: medium;
 }
-h6{
+
+h6 {
   color: #d6252b;
   font-weight: 600;
 }
-a{
+
+a {
   text-decoration: none;
 }
 
-ul{ 
+ul {
   list-style: none;
-   padding: 0;
-    margin: 0;
-    text-align: center;
-    font: bold;
+  padding-left: 0px;
+  margin: 0;
+  text-align: center;
+  font: bold;
 }
-li{
-margin: 5px;
-font: bolder;
-color: black;
+
+li {
+  margin: 5px;
+  font: bolder;
+  color: black;
   font-weight: 500;
   font-size: medium;
 }
 
-p{
+p {
   color: black;
   font-weight: 600;
   font-size: medium;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -77,39 +81,47 @@ p{
   }
 
   #footer-logo p {
-    width: 100%; /* Ensures paragraph fits the full width */
+    width: 300px;
+    text-align: left;
+    padding: 10px;  
   }
 
-  ul{
-text-align: left;
+
+  ul {
+    text-align: left;
   }
 }
 
-h3{
+h3 {
   font: bold;
-  font-size:xx-large;
-  font-style: inherit;}
+  font-size: xx-large;
+  font-style: inherit;
+}
 
-  footer {
-    background-color: white;
-    border-top: solid 5px whitesmoke;
-    box-shadow: solid 1px #d6252b;
-    margin-top: 5px;
-  }
-  /* Styling for all Nav.Link elements */
+footer {
+  background-color: white;
+  border-top: solid 5px whitesmoke;
+  box-shadow: solid 1px #d6252b;
+  margin-top: 5px;
+}
+
+/* Styling for all Nav.Link elements */
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 5px; /* Add space between the icon and text */
+  gap: 5px;
+  /* Add space between the icon and text */
 }
 
 /* Common styles */
 .category-list {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  flex-wrap: wrap;
+  /* Allows items to wrap on smaller screens */
   list-style-type: none;
   padding: 0;
-  justify-content: space-evenly; /* Distributes items evenly */
+  justify-content: space-evenly;
+  /* Distributes items evenly */
   margin: 0;
 }
 
@@ -125,20 +137,25 @@ h3{
 /* Responsive styles for small devices */
 @media (max-width: 1024px) {
   .logo img {
-    max-width: 150px;  
-    max-height: 80px;  
+    max-width: 150px;
+    max-height: 80px;
   }
+
   #category-menu {
     display: none;
   }
+
   .category-list {
-    justify-content: flex-start; /* Align items to the start */
+    justify-content: flex-start;
+    /* Align items to the start */
     padding: 0 10px;
   }
 
   .category-list li {
-    margin: 5px 5px; /* Adjust spacing for smaller screens */
-    font-size: 14px;  /* Smaller font size for mobile */
+    margin: 5px 5px;
+    /* Adjust spacing for smaller screens */
+    font-size: 14px;
+    /* Smaller font size for mobile */
   }
 
   .separator {
@@ -147,18 +164,47 @@ h3{
 }
 
 
+/* 
+.form-container {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background-color: #d86f70;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+}
 
+.form-group {
+  margin-bottom: 15px;
+}
 
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+}
 
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
+button {
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
+button:hover {
+  background-color: #d86f70;
+  color: white;
+  border: solid 1px white;
+} */

@@ -3,7 +3,7 @@ import './Testimonial.css'; // Import the CSS file
 
 const Testimonial = () => {
   return (
-    <div style={{borderTop:'3px solid whitesmoke', paddingTop: '40px'}}>
+    <div style={{borderTop:'3px solid whitesmoke', padding: '40px'}}>
       <h3>Our Customers Love Us!</h3>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div className="testimonial-container">

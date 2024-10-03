@@ -1,57 +1,95 @@
 .product-page {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 20px;
-  }
-  
-  .product-images {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px; /* Set a max width for the page */
+  margin: 0 auto; /* Center the page */
+  padding: 50px;
+}
+
+.product-main-image {
+  border: solid 2px whitesmoke;
+  padding: 20px;
+}
+
+.product-image-container {
+  width: 50%; /* Main image takes 50% width */
+  padding-right: 20px; /* Add some space between the image and details */
+}
+
+.product-details {
+  width: 50%; /* Product details take 50% width */
+  justify-content: center;
+  padding-left: 100px;
+  padding-top: 30px;
+}
+
+.product-preview-images {
+  display: flex;
+  gap: 10px; /* Space between preview images */
+  margin-top: 10px;
+  justify-content: left;
+}
+
+.product-preview-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid whitesmoke;
+}
+
+.product-description {
+  margin-top: 50px;
+  align-items: left;
+}
+
+.product-price-div{
+  margin-top: 50px;
+}
+.product-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.product-actions {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  width:100%;
+}
+
+.custom-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-page {
     flex-direction: column;
-    gap: 10px;
-    width: 40%; /* Left side takes 40% width */
   }
-  
-  .product-image {
+
+  .product-image-container, .product-details {
     width: 100%;
-    height: auto;
+    padding-right: 0;
   }
-  
-  .product-details {
-    width: 50%; /* Right side takes 50% width */
-  }
-  
-  .product-description {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .product-price {
-    font-size: 1.5rem;
-    color: #000;
-    margin-bottom: 20px;
-  }
-  
-  .product-actions {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .add-to-cart-btn, .enquire-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: white;
-  }
-  
-  @media (max-width: 768px) {
-    .product-page {
-      flex-direction: column; /* Stack images and details vertically */
-      align-items: center;
-    }
-  
-    .product-images, .product-details {
-      width: 100%;
-    }
-  }
-  
+}
+
+.enquire-btn {
+  background-color: #d86f70;
+  color: black;
+  border-radius: 5px;
+  object-fit: cover;
+  width: 75%;
+  height: 50px;
+}
+.enquire-btn:hover{
+  background-color:  #f00;
+  color: white;
+
+}
+

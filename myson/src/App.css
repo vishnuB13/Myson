@@ -1,39 +1,13 @@
-.App {
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  margin-top: 0;
+
+*{
+  margin: 0px;
+  padding: 0px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-
-
 .black-text {
   color: black;
-  font-weight: 500;
-  font-size: medium;
+  font-weight: bold;
+  font-size: 13.9px;
+  font-family: sans-serif;
 }
 
 h6 {
@@ -43,6 +17,9 @@ h6 {
 
 a {
   text-decoration: none;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 14px
 }
 
 ul {
@@ -55,10 +32,11 @@ ul {
 
 li {
   margin: 5px;
-  font: bolder;
-  color: black;
+  font: bold;
+  color: #1a181e;;
   font-weight: 500;
-  font-size: medium;
+  font-size: 500;
+  text-decoration: none;
 }
 
 p {
@@ -88,14 +66,16 @@ p {
 
 
   ul {
-    text-align: left;
+    text-align: center;
   }
 }
 
 h3 {
   font: bold;
-  font-size: xx-large;
-  font-style: inherit;
+  font-size: x-large;
+  font-family: inherit;
+  text-align: center;
+  margin-left: 40px;
 }
 
 footer {
@@ -109,7 +89,9 @@ footer {
 .nav-link {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   gap: 5px;
+  font-size: 14px;
   /* Add space between the icon and text */
 }
 
@@ -162,49 +144,58 @@ footer {
     margin: 0 5px;
   }
 }
-
-
-/* 
-.form-container {
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -20%);
-  background-color: #d86f70;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  z-index: 1000;
+.offer-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 80px;
+  border-top: 3px solid whitesmoke;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  color: black;
-}
-
-input {
+.offer-under {
+  display: flex;
+  justify-content: space-between; /* Even space between images */
+  gap: 20px; /* 20px gap between images */
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin-bottom: 20px;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.offer-image {
+  height: 200px;
+  flex: 1; /* This allows the images to resize proportionally */
+  background-size: cover;
+  background-position: center;
 }
 
-button:hover {
-  background-color: #d86f70;
-  color: white;
-  border: solid 1px white;
-} */
+.offer-zone {
+  width: 100%;
+}
+
+.main-offer {
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .offer-component {
+    padding: 0px;
+  }
+  .offer-under {
+    display: block; /* Stack images vertically on smaller screens */
+    gap: 10px; /* Smaller gap for mobile */
+  }
+
+  .offer-image {
+    width: 100%; /* Make each image take full width on mobile */
+    height: 150px; /* Adjust height for mobile */
+    margin-bottom: 10px;
+  }
+
+  .main-offer {
+    height: 300px; /* Adjust the main offer image height for mobile */
+  }
+}

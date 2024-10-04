@@ -92,41 +92,41 @@ const HeaderComponent = () => {
                 <Navbar.Collapse id='basic-navbar-nav'>
                   <Nav className='ms-auto'>
                     {/* Home Icon */}
-                    <Nav.Link className='black-text nav-link' href='#home'>
-                      <FontAwesomeIcon icon={faHome} /> Home
+                    <Nav.Link className=' nav-link' href='#home'>
+                      <FontAwesomeIcon icon={faHome} /> <a href='#home' className='black-text nav-link'>Home</a>
                     </Nav.Link>
 
                     {/* Wishlist Icon */}
-                    <Nav.Link className='black-text nav-link' href='#about'>
-                      <FontAwesomeIcon icon={faHeart} /> WishList
+                    <Nav.Link className=' nav-link' href='#about'>
+                      <FontAwesomeIcon icon={faHeart} /> <a href='#home' className='black-text nav-link'>Wishlist</a>
                     </Nav.Link>
 
                     {/* Account Icon */}
-                    <Nav.Link className='black-text nav-link' href='#store-locator'>
-                      <FontAwesomeIcon icon={faUser} /> Account
+                    <Nav.Link className=' nav-link' href='#store-locator'>
+                      <FontAwesomeIcon icon={faUser} /> <a href='#home' className='black-text nav-link'>Account</a>
                     </Nav.Link>
 
-                  </Nav>
-                </Navbar.Collapse>
+                  </Nav> 
+                </Navbar.Collapse>  
               </Container>
             </Navbar>
           </div>
         </div>
         <div id='category-menu' style={{ marginTop: '10px' }}>
   <ul className="category-list">
-    <li>Store Locator</li>
+    <li><a className='black-text' href='#home'>Store Locator</a></li>
     <li className="separator">|</li>
-    <li>Terms & Conditions</li>
+    <li><a className='black-text' href='#home'>Terms & Conditions</a></li>
     <li className="separator">|</li>
-    <li>Privacy Policy</li>
+    <li><a className='black-text' href='#home'>Privacy Policy</a></li>
     <li className="separator">|</li>
-    <li>Furniture</li>
+    <li><a className='black-text' href='#home'>Furniture</a></li>
     <li className="separator">|</li>
-    <li>Kitchenware</li>
+    <li><a className='black-text' href='#home'>Kitchenware</a></li>
     <li className="separator">|</li>
-    <li>Contact</li>
+    <li><a className='black-text' href='#home'>Contact</a></li>
     <li className="separator">|</li>
-    <li>About</li>
+    <li><a className='black-text' href='#home'>About</a></li> 
   </ul>
 </div>
 

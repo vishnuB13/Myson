@@ -25,17 +25,17 @@ const ConsultationForm = () => {
         <div className="overlay">
           <div className="form-container">
             <button className="close-button" onClick={handleClose}>×</button>
-            <h2>Get a Free Consultation</h2>
-            <form onSubmit={handleSubmit}>
+            <h5 style={{fontWeight:'bolder'}}>Get a Free Consultation</h5>
+            <form style={{marginTop:'25px'}} onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" required />
+                <label style={{textAlign:'left', fontWeight:'bold'}} htmlFor="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder='Your full name' required />
               </div>
               <div className="form-group">
-                <label htmlFor="mobile">Mobile Number:</label>
-                <input type="tel" id="mobile" name="mobile" required />
+                <label style={{textAlign:'left', fontWeight:'bold'}} htmlFor="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" placeholder='Your mobile number' required />
               </div>
-              <button type="submit">Submit</button>
+              <button style={{marginTop:'15px', width:'100%'}} type="submit">Submit</button>
             </form>
           </div>
         </div>

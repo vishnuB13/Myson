@@ -30,7 +30,7 @@ const FooterComponent = () => {
         {/* Links */}
         <section id="links" style={{ flexGrow: 1, maxWidth: '33%', padding: '20px' }}>
           <ul>
-            <h3>Links</h3>
+            <h3>LINKS</h3>
             <li>Kitchen</li>
             <li>Furniture</li>
             <li>Shops</li>

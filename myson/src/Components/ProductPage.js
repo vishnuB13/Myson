@@ -65,7 +65,7 @@ const ProductPage = () => {
         <div className='more-details'>
         <div style={{margin:'0px', padding:'0px'}}>
   <p style={{color:'#878787',textAlign:'left'}}>
-    Delivery : <span style={{color:'#212121'}}>Delivery within 2 days.<br />if ordered before 12:00 pm</span>
+    Delivery : <span style={{color:'#212121'}}>Delivery within 2 days.</span>
     
   </p>
 </div>

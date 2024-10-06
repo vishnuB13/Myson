@@ -7,10 +7,17 @@ import MainProduct from '../images/MainProduct.jpg'
 const ProductPage = () => {
   const productImages = [MainProduct, Product1, Product2];
   const product = {
-    productName:"CLASSIC CORRIAN YELLOW",
+    productName:"Noise Icon 2 Elite Edition 1.8'' Display with Metallic Body and Bluetooth Calling Smartwatch  (Elite Black Strap, Regular)",
     availability:"Instock",
     price:'1,999'
   }
+  const tableData = [
+    { word: 'L x D x H', description: '1220 x 670 x 1260' },
+    { word: 'NO OF SHELVES', description: 'BASE + 3' },
+    { word: 'TEMPERATURE RANGE', description: '04 TO 14' },
+    { word: 'REFRIGERATION TYPE', description: 'VENTILATED' },
+    { word: 'MOVEMENT', description: 'BOOT / WHEEL' },
+  ];
 
   // State to track the current main image
   const [mainImage, setMainImage] = useState(productImages[0]);
@@ -40,11 +47,11 @@ const ProductPage = () => {
 
       {/* Right Side - Product Details */}
       <div className="product-details">
-        <h3 style={{textAlign:'left', fontFamily:"sans-serif", fontWeight:'bold'}}>{product.productName}</h3>
-        <h6 style={{textAlign:'left',color:'black'}}>Availability: <span style={{color:'green',fontWeight:'bold'}}>{product.availability}</span></h6>
+        <span style={{textAlign:'left', fontFamily:'sans-serif',fontSize:'18px',fontWeight:'400'}}>{product.productName}</span>
+        <h6 style={{textAlign:'left',color:'black', paddingTop:'5px'}}>Availability: <span style={{color:'green',fontWeight:'bold'}}>{product.availability}</span></h6>
         <div className='product-description'>
         <p >
-         <ol style={{margin:'0px', padding:'0px'}}>
+         <ol >
           <li> 8mm toughened clear glass</li>
           <li>Electronic digital thermostat for refrigeration counter</li>
           <li>Rear removable electrocoated aluminium sliding doors</li>
@@ -54,6 +61,35 @@ const ProductPage = () => {
           <li>Changeable corian and engraving work with unique corian insertion</li>
          </ol>
         </p>
+        </div>
+        <div className='more-details'>
+        <div style={{margin:'0px', padding:'0px'}}>
+  <p style={{color:'#878787',textAlign:'left'}}>
+    Delivery : <span style={{color:'#212121'}}>Delivery within 2 days.<br />if ordered before 12:00 pm</span>
+    
+  </p>
+</div>
+
+
+<div className="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th colSpan="2">
+              <h3 className="specifications-title">Specifications</h3>
+            </th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {tableData.map((item, index) => (
+            <tr key={index}>
+              <td style={{color:'#878787'}} data-label="Word">{item.word}</td>
+              <td style={{fontSize:'bold',color:'black'}} data-label="Description">{item.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
         </div>
         <div className="product-price-div">
         <p className="product-price" >Rs.{product.price}</p>

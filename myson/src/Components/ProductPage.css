@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  max-width: 1200px; /* Set a max width for the page */
-  margin: 0 auto; /* Center the page */
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 50px;
+  min-height: 100vh; /* Ensure the container has enough height for scrolling */
 }
 
 .product-main-image {
@@ -14,20 +15,23 @@
 }
 
 .product-image-container {
-  width: 50%; /* Main image takes 50% width */
-  padding-right: 20px; /* Add some space between the image and details */
+  width: 50%;
+  padding-right: 20px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: fit-content; /* Ensure height is set to fit the content */
 }
 
 .product-details {
-  width: 50%; /* Product details take 50% width */
-  justify-content: center;
+  width: 50%;
   padding-left: 100px;
   padding-top: 30px;
 }
 
 .product-preview-images {
   display: flex;
-  gap: 10px; /* Space between preview images */
+  gap: 10px;
   margin-top: 10px;
   justify-content: left;
 }
@@ -45,9 +49,10 @@
   align-items: left;
 }
 
-.product-price-div{
+.product-price-div {
   margin-top: 50px;
 }
+
 .product-price {
   font-size: 24px;
   font-weight: bold;
@@ -58,7 +63,7 @@
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  width:100%;
+  width: 100%;
 }
 
 .custom-btn {
@@ -67,7 +72,6 @@
   cursor: pointer;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .product-page {
     flex-direction: column;
@@ -81,14 +85,13 @@
 
 .enquire-btn {
   background-color: #d86f70;
-  color: black;
+  color: white;
   border-radius: 5px;
-  object-fit: cover;
   width: 75%;
   height: 50px;
 }
-.enquire-btn:hover{
-  background-color:  #f00;
-  color: white;
 
+.enquire-btn:hover {
+  background-color: #f00;
+  color: white;
 }

@@ -4,8 +4,12 @@ import ProductImageZoom from './ProductImageZoom';
 import Product1 from '../images/Product1.jpg'
 import Product2 from '../images/Product2.jpg'
 import MainProduct from '../images/MainProduct.jpg'
+import Products from '../Constants/Products';
+
+
 const ProductPage = () => {
   const productImages = [MainProduct, Product1, Product2];
+  console.log("in product page",Products.name)
   const product = {
     productName:"Noise Icon 2 Elite Edition 1.8'' Display with Metallic Body and Bluetooth Calling Smartwatch  (Elite Black Strap, Regular)",
     availability:"Instock",
@@ -27,12 +31,8 @@ const ProductPage = () => {
       
       {/* Left Side - Main Product Image */}
       <div className="product-image-container">
-      <div className='product-main-image'>
-      <ProductImageZoom imageSrc={mainImage} />
-
-      </div>
-        {/* Below Main Image - Preview Images */}
-        <div className="product-preview-images">
+          {/* Below Main Image - Preview Images */}
+          <div className="product-preview-images">
           {productImages.map((imageSrc, index) => (
             <img
               key={index}
@@ -43,12 +43,21 @@ const ProductPage = () => {
             />
           ))}
         </div>
+      <div className='product-main-image'>
+      <ProductImageZoom imageSrc={mainImage} />
+
+      </div>
+      
       </div>
 
       {/* Right Side - Product Details */}
       <div className="product-details">
         <span style={{textAlign:'left', fontFamily:'sans-serif',fontSize:'18px',fontWeight:'400'}}>{product.productName}</span>
         <h6 style={{textAlign:'left',color:'black', paddingTop:'5px'}}>Availability: <span style={{color:'green',fontWeight:'bold'}}>{product.availability}</span></h6>
+        {/* Buttons */}
+        <div className="product-actions">
+          <button className="enquire-btn">Enquire Now</button>
+        </div>
         <div className='product-description'>
         <p >
          <ol >
@@ -83,22 +92,15 @@ const ProductPage = () => {
         <tbody className="table-body">
           {tableData.map((item, index) => (
             <tr key={index}>
-              <td style={{color:'#878787'}} data-label="Word">{item.word}</td>
-              <td style={{fontSize:'bold',color:'black'}} data-label="Description">{item.description}</td>
+              <td style={{color:'#878787'}} >{item.word}</td>
+              <td style={{fontSize:'bold',color:'black'}} >{item.description}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
         </div>
-        <div className="product-price-div">
-        <p className="product-price" >Rs.{product.price}</p>
-        </div>
-
-        {/* Buttons */}
-        <div className="product-actions">
-          <button className="enquire-btn">Enquire Now</button>
-        </div>
+       
       </div>
     </div>
   );

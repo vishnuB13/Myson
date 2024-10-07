@@ -1,9 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Product1 from '../images/Product1.jpg'
-import Product2 from '../images/Product2.jpg'
-import Product3 from '../images/MainProduct.jpg'
+import products from '../Constants/Products';
 
 function CardComponent(props) {
   return (
@@ -12,70 +10,19 @@ function CardComponent(props) {
       
       <div style={styles.cardContainer}>
         {/* Repeat this structure for each card */}
-        <div style={styles.cardWrapper}>
-          <Card style={styles.card}>
-            <Card.Img style={styles.cardImage} variant="top" src={Product1} />
-            <Card.Body>
-              <Card.Title style={styles.cardTitle}>Kitchen Utensil</Card.Title>
-              <Card.Text style={styles.cardText}>Rs.1500</Card.Text>
-            </Card.Body>
-            <Button style={styles.cardButton}>ADD TO CART</Button>
-          </Card>
-        </div>
-
-        {/* Add more cards as needed */}
-        <div style={styles.cardWrapper}>
-          <Card style={styles.card}>
-            <Card.Img style={styles.cardImage} variant="top" src={Product2} />
-            <Card.Body>
-              <Card.Title style={styles.cardTitle}>Kitchen Utensil</Card.Title>
-              <Card.Text style={styles.cardText}>Rs.1500</Card.Text>
-            </Card.Body>
-            <Button style={styles.cardButton}>ADD TO CART</Button>
-          </Card>
-        </div>
-          {/* Add more cards as needed */}
-          <div style={styles.cardWrapper}>
-          <Card style={styles.card}>
-            <Card.Img style={styles.cardImage} variant="top" src={Product3} />
-            <Card.Body>
-              <Card.Title style={styles.cardTitle}>Kitchen Utensil</Card.Title>
-              <Card.Text style={styles.cardText}>Rs.1500</Card.Text>
-            </Card.Body>
-            <Button style={styles.cardButton}>ADD TO CART</Button>
-          </Card>
-        </div>  {/* Add more cards as needed */}
-        <div style={styles.cardWrapper}>
-          <Card style={styles.card}>
-            <Card.Img style={styles.cardImage} variant="top" src={Product1} />
-            <Card.Body>
-              <Card.Title style={styles.cardTitle}>Kitchen Utensil</Card.Title>
-              <Card.Text style={styles.cardText}>Rs.1500</Card.Text>
-            </Card.Body>
-            <Button style={styles.cardButton}>ADD TO CART</Button>
-          </Card>
-        </div>  {/* Add more cards as needed */}
-        <div style={styles.cardWrapper}>
-          <Card style={styles.card}>
-            <Card.Img style={styles.cardImage} variant="top" src={Product2} />
-            <Card.Body>
-              <Card.Title style={styles.cardTitle}>Kitchen Utensil</Card.Title>
-              <Card.Text style={styles.cardText}>Rs.1500</Card.Text>
-            </Card.Body>
-            <Button style={styles.cardButton}>ADD TO CART</Button>
-          </Card>
-        </div>  {/* Add more cards as needed */}
-        <div style={styles.cardWrapper}>
-          <Card style={styles.card}>
-            <Card.Img style={styles.cardImage} variant="top" src={Product3} />
-            <Card.Body>
-              <Card.Title style={styles.cardTitle}>Kitchen Utensil</Card.Title>
-              <Card.Text style={styles.cardText}>Rs.1500</Card.Text>
-            </Card.Body>
-            <Button style={styles.cardButton}>ADD TO CART</Button>
-          </Card>
-        </div>
-        {/* Repeat for other cards */}
+        {products.map((el, index) => (
+          <div style={styles.cardWrapper} key={index}>
+            <Card style={styles.card}>
+              <Card.Img style={styles.cardImage} variant="top" src={el.imageUrl} />
+              <Card.Body>
+                <Card.Title style={styles.cardTitle}>{el.name}</Card.Title>
+                <Card.Text style={styles.cardText}>Rs.{el.price}</Card.Text>
+              </Card.Body>
+              <Button style={styles.cardButton}>ADD TO CART</Button>
+            </Card>
+          </div>
+        ))}
+        
       </div>
     </div>
   );
@@ -92,11 +39,11 @@ const styles = {
   cardWrapper: {
     flex: '0 0 auto',
     width: '250px',
-    height:'400px'
+    height:'410px'
   },
   card: {
     width: '100%',
-    height: '350px',
+    height: '410px',
     border: 'none',
     
   },
@@ -108,6 +55,8 @@ const styles = {
   },
   cardTitle: {
     textAlign: 'left',
+    fontWeight:'normal',
+    fontsize:'5px'
   },
   cardText: {
     textAlign: 'left',
@@ -122,7 +71,7 @@ const styles = {
     height: '45px',
     fontWeight: 'bold',
     fontFamily: 'sans-serif',
-    padding:'5px'
+    // padding:'5px'
   },
 };
 

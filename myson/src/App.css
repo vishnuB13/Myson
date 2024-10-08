@@ -3,6 +3,14 @@
   margin: 0px;
   padding: 0px;
 }
+
+.banner-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 30px;
+  margin-top:15px
+}
+
 .black-text {
   color: black;
   font-weight: bold;
@@ -46,11 +54,33 @@ p {
   text-align: left;
 }
 
+button{
+  background-color: red;
+  color: white;
+}
+
 @media (max-width: 768px) {
+
+  .home-page {
+    padding: 0px;
+    margin: 0px;
+  }
+  .searchbar {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .banner-container {
+    padding: 10px;
+    margin: 0px;
+    margin-top: 20px;
+    height: 250px;
+  }
   #last {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
+    padding: 0px;
   }
 
   #last section {
@@ -196,7 +226,9 @@ footer {
   }
 
   .main-offer {
-    height: 300px; /* Adjust the main offer image height for mobile */
+    height: 150px; /* Adjust the main offer image height for mobile */
+    width: 100%;
+    padding: 0px;
   }
 }
 

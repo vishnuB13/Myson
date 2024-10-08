@@ -25,7 +25,7 @@ const ConsultationForm = () => {
         <div className="overlay">
           <div className="form-container">
             <button className="close-button" onClick={handleClose}>×</button>
-            <h5 style={{fontWeight:'bolder'}}>Get a Free Consultation</h5>
+            <h5 style={{fontWeight:'bolder',textAlign:'center'}}>Get a Free Consultation</h5>
             <form style={{marginTop:'25px'}} onSubmit={handleSubmit}>
               <div className="form-group">
                 <label style={{textAlign:'left', fontWeight:'bold'}} htmlFor="name">Full Name:</label>

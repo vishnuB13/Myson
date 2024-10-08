@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const BannerSlider = () => {
   return (
-    <div style={{ width: '100%', overflow: 'hidden', padding: '30px', marginTop:'15px' }}>
+    <div className='banner-container' >
       <Slider
         dots={true} // Show dots for navigation
         infinite={true} // Infinite loop
@@ -35,11 +35,11 @@ const BannerSlider = () => {
           },
         ]}
       >
-        <div><img src="https://dukaan.b-cdn.net/1440x1440/webp/media/2418b97e-0104-4785-a914-92ef4a75ede9.png" alt='CompanyLogo' style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+        <div><img src="https://mccoymart.com/post/wp-content/uploads/Bosch-Dishwashers-Redefining-Indian-Kitchen-Cleanup.jpg" alt='DishWasher' style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
         ></img></div>
-        <div><img src="https://dukaan.b-cdn.net/1440x1440/webp/media/2418b97e-0104-4785-a914-92ef4a75ede9.png" alt='CompanyLogo' style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+        <div><img src="https://www.dinegear.com/wp-content/uploads/2023/04/Best-Panel-Ready-Dishwashers.jpg" alt='Dishwasher deals' style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
         ></img></div>
-        <div><img src="https://dukaan.b-cdn.net/1440x1440/webp/media/2418b97e-0104-4785-a914-92ef4a75ede9.png" alt='CompanyLogo' style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+        <div><img src="https://mahajanelectronics.com/cdn/shop/articles/Mahajan_banner_16.jpg?v=1701840167" alt='CompanyLogo' style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
         ></img></div>
       </Slider>
     </div>

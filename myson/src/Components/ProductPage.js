@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import './ProductPage.css';
 import ProductImageZoom from './ProductImageZoom';
-import Product1 from '../images/Product1.jpg'
-import Product2 from '../images/Product2.jpg'
-import MainProduct from '../images/MainProduct.jpg'
 import Products from '../Constants/Products';
 
 
 const ProductPage = () => {
-  const productImages = [MainProduct, Product1, Product2];
+  const productImages = [Products[0].imageUrl,Products[1].imageUrl,Products[2].imageUrl];
   console.log("in product page",Products.name)
   const product = {
     productName:"Noise Icon 2 Elite Edition 1.8'' Display with Metallic Body and Bluetooth Calling Smartwatch  (Elite Black Strap, Regular)",
@@ -52,7 +49,7 @@ const ProductPage = () => {
 
       {/* Right Side - Product Details */}
       <div className="product-details">
-        <span style={{textAlign:'left', fontFamily:'sans-serif',fontSize:'18px',fontWeight:'400'}}>{product.productName}</span>
+        <span style={{textAlign:'left', fontFamily:'sans-serif',fontSize:'18px',fontWeight:'500'}}>{Products[5].name}</span>
         <h6 style={{textAlign:'left',color:'black', paddingTop:'5px'}}>Availability: <span style={{color:'green',fontWeight:'bold'}}>{product.availability}</span></h6>
         {/* Buttons */}
         <div className="product-actions">

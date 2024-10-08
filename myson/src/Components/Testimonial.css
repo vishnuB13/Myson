@@ -41,6 +41,8 @@ h3 {
   .testimonial-container {
     flex: 1 1 100%; /* Stack the testimonial cards on top of each other */
     margin-bottom: 20px;
+    padding: 0px;
+    margin: 20px 0px;
   }
 }
 

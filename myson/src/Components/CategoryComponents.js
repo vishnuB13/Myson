@@ -1,6 +1,15 @@
 import React from 'react';
 
 const CategoryComponents = () => {
+  const images = [
+    "https://dms.mydukaan.io/original/webp/media/c74f22ef-eaa2-404b-832c-7d43fc0c8d86.gif",
+    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
+    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
+    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
+    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
+    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
+  ];
+
   return (
     <div
       style={{
@@ -13,78 +22,15 @@ const CategoryComponents = () => {
         whiteSpace: 'nowrap', // Prevents items from wrapping onto the next line
       }}
     >
-      <img
-        src='https://dms.mydukaan.io/original/webp/media/c74f22ef-eaa2-404b-832c-7d43fc0c8d86.gif'
-        className='img-fluid'
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-          maxHeight: '100px',
-          marginLeft: '10px',
-          borderRadius: '20px',
-          backgroundColor: 'white',
-        }}
-      />
-      <img
-        src='https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png'
-        className='img-fluid'
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-          maxHeight: '100px',
-          marginLeft: '10px',
-          borderRadius: '20px',
-          backgroundColor: 'white',
-        }}
-      />
-      <img
-        src='https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png'
-        className='img-fluid'
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-          maxHeight: '100px',
-          marginLeft: '10px',
-          borderRadius: '20px',
-          backgroundColor: 'white',
-        }}
-      />
-      <img
-        src='https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png'
-        className='img-fluid'
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-          maxHeight: '100px',
-          marginLeft: '10px',
-          borderRadius: '20px',
-          backgroundColor: 'white',
-        }}
-      />
-      <img
-        src='https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png'
-        className='img-fluid'
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-          maxHeight: '100px',
-          marginLeft: '10px',
-          borderRadius: '20px',
-          backgroundColor: 'white',
-        }}
-      />
-      <img
-        src='https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png'
-        className='img-fluid'
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-          maxHeight: '100px',
-          marginLeft: '10px',
-          borderRadius: '20px',
-          backgroundColor: 'white',
-        }}
-      />
+      
+        {images.map((imageSrc, index) => (
+          <img
+            key={index}
+            src={imageSrc}
+            className='img-fluid category-image'
+            alt={`category-${index}`}
+          />
+        ))}
     </div>
   );
 };

@@ -1,16 +1,22 @@
-
-*{
+* {
   margin: 0px;
   padding: 0px;
 }
 
-
+.category-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 100px;
+  margin-left: 10px;
+  border-radius: 20px;
+  background-color: white;
+}
 
 .banner-container {
   width: 100%;
   overflow: hidden;
   padding: 30px;
-  margin-top:15px
+  margin-top: 15px
 }
 
 .black-text {
@@ -43,7 +49,8 @@ ul {
 li {
   margin: 5px;
   font: bold;
-  color: #1a181e;;
+  color: #1a181e;
+  ;
   font-weight: 500;
   font-size: 500;
   text-decoration: none;
@@ -56,7 +63,7 @@ p {
   text-align: left;
 }
 
-button{
+button {
   background-color: red;
   color: white;
 }
@@ -67,17 +74,20 @@ button{
     padding: 0px;
     margin: 0px;
   }
+
   .searchbar {
     width: 100%;
     padding: 0px;
     margin: 0px;
   }
+
   .banner-container {
     padding: 10px;
     margin: 0px;
     margin-top: 20px;
     height: 250px;
   }
+
   #last {
     flex-direction: column;
     align-items: left;
@@ -93,7 +103,7 @@ button{
   #footer-logo p {
     width: 300px;
     text-align: left;
-    padding: 10px;  
+    padding: 10px;
   }
 
 
@@ -176,6 +186,7 @@ footer {
     margin: 0 5px;
   }
 }
+
 .offer-component {
   display: flex;
   flex-direction: column;
@@ -187,15 +198,18 @@ footer {
 
 .offer-under {
   display: flex;
-  justify-content: space-between; /* Even space between images */
-  gap: 20px; /* 20px gap between images */
+  justify-content: space-between;
+  /* Even space between images */
+  gap: 20px;
+  /* 20px gap between images */
   width: 100%;
   margin-bottom: 20px;
 }
 
 .offer-image {
   height: 200px;
-  flex: 1; /* This allows the images to resize proportionally */
+  flex: 1;
+  /* This allows the images to resize proportionally */
   background-size: cover;
   background-position: center;
   border-radius: 5px;
@@ -218,19 +232,25 @@ footer {
   .offer-component {
     padding: 0px;
   }
+
   .offer-under {
-    display: block; /* Stack images vertically on smaller screens */
-    gap: 10px; /* Smaller gap for mobile */
+    display: block;
+    /* Stack images vertically on smaller screens */
+    gap: 10px;
+    /* Smaller gap for mobile */
   }
 
   .offer-image {
-    width: 100%; /* Make each image take full width on mobile */
-    height: 150px; /* Adjust height for mobile */
+    width: 100%;
+    /* Make each image take full width on mobile */
+    height: 150px;
+    /* Adjust height for mobile */
     margin-bottom: 10px;
   }
 
   .main-offer {
-    height: 150px; /* Adjust the main offer image height for mobile */
+    height: 150px;
+    /* Adjust the main offer image height for mobile */
     width: 100%;
     padding: 0px;
   }
@@ -250,16 +270,19 @@ footer {
 
 table {
   border-collapse: collapse;
-  width: 100%; /* Adjusts for larger screens */
+  width: 100%;
+  /* Adjusts for larger screens */
   font-family: Arial, sans-serif;
   max-width: 100%;
   border: 1px solid #ccc;
 }
-.table-body{
+
+.table-body {
   margin-top: 1px solid #ccc;
- 
+
 }
-th{
+
+th {
   border-bottom: 1px solid #ccc;
   padding: 20px;
   padding-left: 10px;
@@ -269,58 +292,64 @@ th{
 td {
   padding: 10px;
   text-align: left;
-  word-wrap: break-word; /* To wrap long words or text */
+  word-wrap: break-word;
+  /* To wrap long words or text */
   font-size: small;
   font-family: sans-serif;
   font: bold;
 }
-.specifications-title{
+
+.specifications-title {
   text-align: left;
   margin-left: 0px;
   font: bold;
 }
+
 td:first-child {
-  font-weight:inherit;
+  font-weight: inherit;
   font-family: sans-serif;
-  
+
 }
 
 /* Responsive Design for mobile devices */
 @media (max-width: 768px) {
   table {
-      width: 100%; /* Full width for mobile */
+    width: 100%;
+    /* Full width for mobile */
   }
-  
+
   td {
-      padding: 8px;
-      font-size: 14px; /* Smaller text on mobile */
+    padding: 8px;
+    font-size: 14px;
+    /* Smaller text on mobile */
   }
 
   /* You can optionally stack rows vertically for mobile */
   tr {
-      display: block;
-      margin-bottom: 10px; /* Adds space between rows */
+    display: block;
+    margin-bottom: 10px;
+    /* Adds space between rows */
   }
 
   td {
-      display: block;
-      text-align: right;
-      padding-left: 50%;
-      position: relative;
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
   }
 
   td:first-child {
-      font-weight: bold;
-      text-align: left;
-      padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
   }
 
   td:before {
-      content: attr(data-label); /* Display column headers in mobile view */
-      position: absolute;
-      left: 10px;
-      text-align: left;
-      font-weight: bold;
+    content: attr(data-label);
+    /* Display column headers in mobile view */
+    position: absolute;
+    left: 10px;
+    text-align: left;
+    font-weight: bold;
   }
 }
-

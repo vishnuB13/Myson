@@ -31,17 +31,20 @@ const ConsultationForm = () => {
         <div className="overlay">
           <div className="form-container">
             <button className="close-button" onClick={handleClose}>×</button>
-            <h5 style={{fontWeight:'bolder',textAlign:'center'}}>Get a Free Consultation</h5>
-            <form style={{marginTop:'25px'}} onSubmit={handleSubmit}>
+            <h5 style={{ fontWeight: 'bolder', textAlign: 'center' }}>Get a Free Consultation</h5>
+            <form style={{ marginTop: '25px' }} onSubmit={handleSubmit}>
               <div className="form-group">
-                <label style={{textAlign:'left', fontWeight:'bold'}} htmlFor="name">Full Name:</label>
+                <label style={{ textAlign: 'left', fontWeight: 'bold' }} htmlFor="name">Full Name<span style={{ color: 'red' }}> *</span></label>
                 <input type="text" id="name" name="name" placeholder='Your full name' required />
               </div>
               <div className="form-group">
-                <label style={{textAlign:'left', fontWeight:'bold'}} htmlFor="mobile">Mobile Number:</label>
-                <input type="tel" id="mobile" name="mobile" placeholder='Your mobile number' required />
+                <label style={{ textAlign: 'left', fontWeight: 'bold' }} htmlFor="mobile">
+                  Mobile Number<span style={{ color: 'red' }}> *</span>
+                </label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Your mobile number" required />
               </div>
-              <button 
+
+              <button
                 className="animated-button"
                 type="submit"
               >

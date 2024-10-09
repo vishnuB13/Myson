@@ -16,9 +16,8 @@
   /* Form container styling */
   .form-container {
     background-color: white;
-    padding: 20px;
+    padding: 20px 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
     position: relative;
     max-width: 400px;
     width: 100%;
@@ -29,9 +28,9 @@
   /* Close button (cross) styling */
  /* Close button (cross) styling */
 .close-button {
-    position: absolute;
-    top: 10px;
-    right: 0px;
+  position: absolute;
+    top: 20px;
+    right: 20px;
     background: none;
     border: none;
     font-size: 32px;  /* Increased the font size */
@@ -39,12 +38,14 @@
     cursor: pointer;
     color: #333;
     z-index: 10;  /* Ensure it's on top of other elements */
-    
+    text-align: left;
+    font-size:large;
   }
   
   .close-button:hover {
     color: #f00;  /* Red on hover for better visibility */
-    background-color: white;
+    background-color: whitesmoke;
+    border: solid 2px whitesmoke;
   }
   
   /* Form styling */
@@ -55,30 +56,22 @@
   label {
     display: block;
     margin-bottom: 5px;
+    font:200;
   }
   
   input {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 3px solid whitesmoke;
     border-radius: 4px;
+    outline: none;
   }
   
 
   
 
 
-  .close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 5px; /* Distance from the top */
-    margin-right: 5px; /* Distance from the right */
-    font-size: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
+
   
   h3 {
     margin-right: 40px; /* To make room for the close button */
@@ -112,12 +105,15 @@
   @keyframes slideInOut {
     0% {
       left: -25%;
+      right: 125%;
     }
     50% {
       left: 100%; /* Move outside the right side */
+      right: 100%;
     }
     100% {
       left: -25%; /* Move back to the left */
+      right: 125%;
     }
   }
   

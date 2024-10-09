@@ -7,9 +7,9 @@
   max-width: 100%;
   height: auto;
   max-height: 100px;
+  max-width: 100px;
   margin-left: 10px;
   border-radius: 20px;
-  background-color: white;
 }
 
 .banner-container {
@@ -50,7 +50,7 @@ li {
   margin: 5px;
   font: bold;
   color: #1a181e;
-  ;
+
   font-weight: 500;
   font-size: 500;
   text-decoration: none;

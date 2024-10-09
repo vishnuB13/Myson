@@ -3,11 +3,20 @@ import React from 'react';
 const CategoryComponents = () => {
   const images = [
     "https://dms.mydukaan.io/original/webp/media/c74f22ef-eaa2-404b-832c-7d43fc0c8d86.gif",
-    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
-    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
-    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
-    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
-    "https://dukaan.b-cdn.net/500x500/webp/media/248fdaa1-3bd0-44fc-8421-7f89ef6b7375.png",
+    "https://www.classeq.co.uk/uploads/products/classeq-g400/G400-basket-on-door.png",
+    "https://www.dihr.com/sync/img/HT 11 ECO.jpg",
+    "https://www.scotsice.com.au/_images/_dihr/RX101E.jpg",
+    "https://www.classeq.co.uk/uploads/products/classeq-g500/G500_Rack_On_Door.png",
+    "https://www.angliacateringequipment.com/wp-content/uploads/2022/09/Convotherm-Maxx-10.10-Electric-Combi-Oven-101-Shelves-GN-11-400x400.webp",
+  ];
+
+  const names = [
+    "Offer Zone",
+    "Blue star",
+    "Winter halter",
+    "Bosch",
+    "Convotherm",
+    "Classeq",
   ];
 
   return (
@@ -22,15 +31,19 @@ const CategoryComponents = () => {
         whiteSpace: 'nowrap', // Prevents items from wrapping onto the next line
       }}
     >
-      
-        {images.map((imageSrc, index) => (
+      {images.map((imageSrc, index) => (
+        <div key={index} style={{ textAlign: 'center', margin: '0 10px' }}>
           <img
-            key={index}
             src={imageSrc}
             className='img-fluid category-image'
             alt={`category-${index}`}
+            style={{ maxWidth: '100px', height: 'auto' }} // Adjust image size as needed
           />
-        ))}
+          <div className='black-text' style={{ marginTop: '5px' }}>
+            {names[index]} {/* Display the name under each image */}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -4,6 +4,8 @@
   padding: 0px;
 }
 
+
+
 .banner-container {
   width: 100%;
   overflow: hidden;
@@ -196,6 +198,7 @@ footer {
   flex: 1; /* This allows the images to resize proportionally */
   background-size: cover;
   background-position: center;
+  border-radius: 5px;
 }
 
 .offer-zone {
@@ -207,6 +210,7 @@ footer {
   width: 100%;
   background-size: cover;
   background-position: center;
+  border-radius: 10px;
 }
 
 /* Responsive styles for mobile */

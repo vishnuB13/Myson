@@ -3,6 +3,12 @@ import './FormComponent.css'; // Assuming you put the styles here
 
 const ConsultationForm = () => {
   const [showForm, setShowForm] = useState(false);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    // Trigger the animation when the component mounts
+    setAnimate(true);
+  }, []);
 
   // Show form when the app first loads
   useEffect(() => {
@@ -35,7 +41,12 @@ const ConsultationForm = () => {
                 <label style={{textAlign:'left', fontWeight:'bold'}} htmlFor="mobile">Mobile Number:</label>
                 <input type="tel" id="mobile" name="mobile" placeholder='Your mobile number' required />
               </div>
-              <button style={{marginTop:'15px', width:'100%'}} type="submit">Submit</button>
+              <button 
+                className="animated-button"
+                type="submit"
+              >
+                Submit
+              </button>
             </form>
           </div>
         </div>

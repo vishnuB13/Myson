@@ -64,18 +64,7 @@
     border-radius: 4px;
   }
   
-  button {
-    padding: 10px 20px;
-    background-color: #d86f70;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #f00;
-  }
+
   
 
 
@@ -95,5 +84,40 @@
     margin-right: 40px; /* To make room for the close button */
     text-align: left;
   }
+
+  .animated-button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid red;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: red;
+    color: #fff;
+    font-weight:500;
+  }
   
+  .animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25%; /* Start outside the left side */
+    width: 35%; /* 25% of the button's width */
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* A bright, semi-transparent red */
+    animation: slideInOut 2s ease-in-out infinite;
+  }
+  
+  @keyframes slideInOut {
+    0% {
+      left: -25%;
+    }
+    50% {
+      left: 100%; /* Move outside the right side */
+    }
+    100% {
+      left: -25%; /* Move back to the left */
+    }
+  }
   

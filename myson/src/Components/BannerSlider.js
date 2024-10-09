@@ -17,7 +17,7 @@ const BannerSlider = () => {
         swipeToSlide={true} // Smooth swipe between slides
         touchThreshold={10} // Adjust sensitivity of swiping
         autoplay={true} // Enable auto scroll
-        autoplaySpeed={4000} // Scroll every 2 seconds
+        autoplaySpeed={2000} // Scroll every 2 seconds
         responsive={[
           {
             breakpoint: 1024,

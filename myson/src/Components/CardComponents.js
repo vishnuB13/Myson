@@ -7,7 +7,7 @@ import './CardComponent.css'; // Import the external CSS file
 function CardComponent(props) {
   return (
     <div className="main-container">
-      <h3 className="title">{props.title}</h3>
+      <h4 style={{ fontWeight:'600', textAlign: 'left', fontFamily:'sans-serif' }}>{props.title}</h4>
 
       <div className="card-container">
         {products.map((el, index) => (

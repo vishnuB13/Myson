@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faHome, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faHome, faHeart, faUser, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook,faTwitter,faYoutube,faLinkedin,faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const HeaderComponent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -15,22 +17,35 @@ const HeaderComponent = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleMenuToggle = () => {
+    setIsMenuOpen((prev) => !prev); // Toggle the menu open state
+    console.log("Menu Toggled: ", !isMenuOpen); // Debugging statement
+  };
+
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false); // Close the menu
+    console.log("Menu Closed"); // Debugging statement
+  };
+
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 1, backgroundColor: 'white' }}>
-      <div
-        className='homepage'
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          backgroundColor: 'white',
-          borderBottom: 'solid 5px whitesmoke',
-          padding: '10px 30px',
-          margin: '0 50px',
-        }}
-      >
+      <div className='homepage'>
         <div className='top-section' style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+          
           {/* Logo and Hamburger Menu */}
-          <div className='logo-hamburger' style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
+          <div className='logo-hamburger'>
+             {/* Navbar Toggle for mobile view */}
+             {isMobile && (
+              <div className='hamburger'>
+                <button onClick={handleMenuToggle} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+                  <span className='navbar-toggler-icon'>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </span>
+                </button>
+              </div>
+            )}
             <div className='logo'>
               <img
                 src={require('../images/CompanyLogo.png')}
@@ -47,10 +62,7 @@ const HeaderComponent = () => {
                 }}
               />
             </div>
-            {/* Navbar Toggle for mobile view */}
-            <div className='hamburger'>
-              <Navbar.Toggle aria-controls='basic-navbar-nav' />
-            </div>
+           
           </div>
 
           {/* Search Bar */}
@@ -62,7 +74,7 @@ const HeaderComponent = () => {
               justifyContent: 'center',
               width: '100%',
               padding: '10px 0',
-              marginTop: isMobile ? '10px' : '0', // Move the search bar to the second line on mobile
+              marginTop: isMobile ? '10px' : '0',
             }}
           >
             <input
@@ -74,7 +86,7 @@ const HeaderComponent = () => {
                 backgroundColor: 'whitesmoke',
                 padding: '10px',
               }}
-              placeholder='Search For Products ...'
+              placeholder='Search For Products,brands...'
             />
             <button
               style={{
@@ -92,24 +104,20 @@ const HeaderComponent = () => {
             </button>
           </div>
 
-          {/* Menu */}
-          <div className='navbar'>
+          {/* Navbar */}
+          <div className='navbar' style={{ display: isMobile ? 'none' : 'block' }}>
             <Navbar expand='lg' className='bg-body-primary'>
               <Container>
-                {/* Navbar Collapse - collapses in small screen */}
                 <Navbar.Collapse id='basic-navbar-nav'>
                   <Nav className='ms-auto'>
-                    {/* Home Icon */}
                     <Nav.Link className='nav-link' href='#home'>
-                      <FontAwesomeIcon icon={faHome} /> <a href='#home' className='black-text nav-link'>Home</a>
+                      <FontAwesomeIcon icon={faHome} /> <span className='black-text nav-link'>Home</span>
                     </Nav.Link>
-                    {/* Wishlist Icon */}
                     <Nav.Link className='nav-link' href='#about'>
-                      <FontAwesomeIcon icon={faHeart} /> <a href='#home' className='black-text nav-link'>Wishlist</a>
+                      <FontAwesomeIcon icon={faHeart} /> <span className='black-text nav-link'>Wishlist</span>
                     </Nav.Link>
-                    {/* Account Icon */}
                     <Nav.Link className='nav-link' href='#store-locator'>
-                      <FontAwesomeIcon icon={faUser} /> <a href='#home' className='black-text nav-link'>Account</a>
+                      <FontAwesomeIcon icon={faUser} /> <span className='black-text nav-link'>Account</span>
                     </Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
@@ -118,8 +126,8 @@ const HeaderComponent = () => {
           </div>
         </div>
 
-        {/* Category Menu */}
-        <div id='category-menu' style={{ marginTop: '10px' }}>
+         {/* Category Menu */}
+         <div id='category-menu' className='category-menu' style={{ display: isMobile ? 'none' : 'block', marginTop: '10px' }}>
           <ul className='category-list'>
             <li><a className='black-text' href='#home'>Store Locator</a></li>
             <li className='separator'>|</li>
@@ -136,6 +144,62 @@ const HeaderComponent = () => {
             <li><a className='black-text' href='#home'>About</a></li>
           </ul>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobile && (
+          <div className='mobile-menu' style={{ transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.3s ease-in-out', position: 'fixed', top: 0, right: 0, width: '80%', height: '100vh', backgroundColor: 'whitesmoke', zIndex: 1000 }}>
+            {/* Close Button */}
+            <h4 style={{fontWeight:'bold', marginTop:'15px', marginLeft:'30px', fontFamily:'sans-serif'}}>Menu</h4>
+            <button onClick={handleCloseMenu} style={{ background: 'none', color: 'red', border: 'none', cursor: 'pointer', position: 'absolute', top: '10px', right: '20px', fontSize: '24px' }}>
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+
+            {/* Navbar items for mobile */}
+            <div className='navbar' style={{marginTop:'30px',borderBottom:'solid 3px whitesmoke', borderTop:'solid 0.5px black'}}>
+              <Nav className='ms-auto'>
+                <Nav.Link className=' black-text' href='#home'>
+                  <p style={{padding:'0px', marginBottom:'0px'}} className='black-text '>Home</p>
+                </Nav.Link>
+                <Nav.Link className=' black-text' href='#about'>
+                  <p style={{padding:'0px', marginBottom:'0px'}} className='black-text'>Wishlist</p>
+                </Nav.Link>
+                <Nav.Link className=' black-text' href='#store-locator'>
+                  <p style={{padding:'0px', marginBottom:'0px'}} className='black-text'>Account</p>
+                </Nav.Link>
+              </Nav>
+            </div>
+
+            {/* Category Menu for mobile - line by line without separator */}
+            <div className='category-menu' style={{ marginTop: '10px', borderBottom:'solid 3px whitesmoke', borderTop:'solid 0.5px black' }}>
+              <ul className='category-list' style={{ listStyle: 'none', padding: '0', display: 'flex', flexDirection: 'column', textAlign: 'left',gap:'10px'}}>
+                <li><a className='black-text' href='#home'>Store Locator</a></li>
+                <li><a className='black-text' href='#terms'>Terms & Conditions</a></li>
+                <li><a className='black-text' href='#privacy'>Privacy Policy</a></li>
+                <li><a className='black-text' href='#dishwasher'>Dishwasher</a></li>
+                <li><a className='black-text' href='#kitchenware'>Kitchenware</a></li>
+                <li><a className='black-text' href='#contact'>Contact</a></li>
+                <li><a className='black-text' href='#about'>About</a></li>
+              </ul>
+            </div>
+            <div style={{ listStyle: 'none', gap: '10px',display:'flex', marginTop:'25px',justifyContent:'center', position:'absolute',bottom:'0', marginLeft:'30px', borderTop:'solid 0.5px black' }}>
+          <li>
+            <FontAwesomeIcon icon={faFacebook} style={{ color: 'black' }} />
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faTwitter} style={{ color: 'black' }} />
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faYoutube} style={{ color: 'black' }} />
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faLinkedin} style={{ color: 'black' }} />
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faInstagram} style={{ color: 'black' }} />
+          </li>
+        </div>
+          </div>
+        )}
       </div>
     </header>
   );

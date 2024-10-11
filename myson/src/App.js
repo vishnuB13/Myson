@@ -5,7 +5,7 @@ import FormComponent from './Components/FormComponent';
 
 import CategoryComponents from './Components/CategoryComponents';
 import BannerSlider from './Components/BannerSlider';
-// import Testimonial from './Components/TestimonialComponent';
+import Testimonial from './Components/TestimonialComponent';
 import OfferComponent from './Components/OfferComponent';
 
 // import ProductPage from './Components/ProductPage';
@@ -31,7 +31,7 @@ function App() {
       {/* <ProductPage /> */}
       <CardComponent title="New Arrival" />
       <CardComponent title="Recently Visited" />
-      {/* <Testimonial /> */}
+      <Testimonial />
       <Footer />
 
     </div>

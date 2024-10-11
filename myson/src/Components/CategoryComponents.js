@@ -39,7 +39,7 @@ const CategoryComponents = () => {
             alt={`category-${index}`}
             style={{ maxWidth: '100px', height: 'auto' }} // Adjust image size as needed
           />
-          <div className='black-text' style={{ marginTop: '5px' }}>
+          <div className='black-text' style={{ marginTop: '5px',color:'var(--black-12)' }}>
             {names[index]} {/* Display the name under each image */}
           </div>
         </div>

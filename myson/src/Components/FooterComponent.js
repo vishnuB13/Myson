@@ -5,20 +5,15 @@ import { faFacebook, faTwitter, faYoutube, faLinkedin, faInstagram } from '@fort
 const FooterComponent = () => {
   return (
     <footer style={{  padding: '0px 0px' }}>
-      <div id='last' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '30px 80px' }}>
+      <div id='last'>
 
         {/* Logo and description on the left */}
-        <section id="footer-logo" style={{ flexGrow: 1, maxWidth: '33%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+        <section id="footer-logo" >
           <img
             src={require('../images/CompanyLogo.png')}
             alt="Company Logo"
-            className="img-fluid"
-            style={{
-              width: '100%',
-              maxWidth: '200px',
-              height: 'auto',
-              maxHeight: '200px',
-            }}
+            className="image-fluid"
+            
           />
           <p >
             Since our establishment in 2018, MYSON has swiftly risen as India's leading hub for pet parents.
@@ -28,9 +23,9 @@ const FooterComponent = () => {
         </section>
 
         {/* Links */}
-        <section id="links" style={{ flexGrow: 1, maxWidth: '33%', padding: '20px' }}>
-          <ul>
-            <h3>LINKS</h3>
+        <section id="links" >
+          <ul >
+            <h5 className='footer-links'>Links</h5>
             <li>Kitchen</li>
             <li>Furniture</li>
             <li>Shops</li>
@@ -38,9 +33,9 @@ const FooterComponent = () => {
         </section>
 
         {/* Contact Us */}
-        <section id="contact-us" style={{ flexGrow: 1, maxWidth: '33%', padding: '20px' }}>
+        <section id="contact-us" >
   <ul >
-    <h3>Contact Us</h3>
+    <h5 className='footer-contact'>Contact Us</h5>
     <li style={{ marginBottom: '8px' }}>Call Us at 8606387883</li>
     <li style={{ marginBottom: '8px' }}>www.myson.in</li>
     <li style={{ marginBottom: '8px' }}>

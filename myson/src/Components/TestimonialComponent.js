@@ -3,9 +3,9 @@ import './Testimonial.css'; // Import the CSS file
 
 const Testimonial = () => {
   return (
-    <div style={{borderTop:'3px solid whitesmoke', padding: '40px'}}>
-      <h3>Our Customers Love Us!</h3>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <div className='testimonial'>
+      <h4 style={{ fontWeight: 'bold', textAlign: 'center' }} className='title'>Our Customers Love Us!</h4>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         <div className="testimonial-container">
           <div className="testimonial-card">
             <div className="testimonial-image">
@@ -29,7 +29,7 @@ const Testimonial = () => {
               <p className="testimonial-text">
                 "This service has been fantastic! The team was professional, and the results exceeded our expectations."
               </p>
-              <p className="testimonial-author">- John Doe</p>
+              <p className="testimonial-author">- Jane Smith</p>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@ const Testimonial = () => {
               <p className="testimonial-text">
                 "This service has been fantastic! The team was professional, and the results exceeded our expectations."
               </p>
-              <p className="testimonial-author">- John Doe</p>
+              <p className="testimonial-author">- Alice Johnson</p>
             </div>
           </div>
         </div>

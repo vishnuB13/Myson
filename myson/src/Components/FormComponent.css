@@ -22,7 +22,7 @@
     max-width: 400px;
     width: 100%;
     height: 350px;
-    
+    border-radius: 10px;
   }
   
   /* Close button (cross) styling */
@@ -67,12 +67,6 @@
     outline: none;
   }
   
-
-  
-
-
-
-  
   h3 {
     margin-right: 40px; /* To make room for the close button */
     text-align: left;
@@ -86,9 +80,10 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    background-color: red;
-    color: #fff;
+    background-color: #f00;
+    color: white;
     font-weight:500;
+    border-radius: 3px;
   }
   
   .animated-button::before {

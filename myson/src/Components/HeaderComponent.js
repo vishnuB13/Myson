@@ -7,25 +7,50 @@ import { faFacebook,faTwitter,faYoutube,faLinkedin,faInstagram } from '@fortawes
 const HeaderComponent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [inputWidth, setInputWidth] = useState(0); // Track the input width dynamically
+  const [isFocused, setIsFocused] = useState(false); // State for handling blur effect
+  const [showModal, setShowModal] = useState(false); // State to control modal visibility\
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+  const [inputTop, setInputTop] = useState(0); 
+
+
+    // Reference for input width
+    const inputRef = React.useRef(null);
+    useEffect(() => {
+      if (inputRef.current) {
+        setInputWidth(inputRef.current.offsetWidth); // Dynamically track input width
+        const inputRect = inputRef.current.getBoundingClientRect();
+        setInputTop(inputRect.bottom); // Set modal top position right below the input field
+      }
+    }, [showModal]); // Run when the modal is shown
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    const handleMenuToggle = () => {
+      setIsMenuOpen((prev) => !prev); // Toggle the menu open state
     };
+  
+    const handleCloseMenu = () => {
+      setIsMenuOpen(false); // Close the menu
+    };
+  
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
-  const handleMenuToggle = () => {
-    setIsMenuOpen((prev) => !prev); // Toggle the menu open state
-    console.log("Menu Toggled: ", !isMenuOpen); // Debugging statement
+
+ 
+
+  const closeModal = () => {
+    setShowModal(false);
+    setIsFocused(false); // Remove blur effect
   };
 
-  const handleCloseMenu = () => {
-    setIsMenuOpen(false); // Close the menu
-    console.log("Menu Closed"); // Debugging statement
-  };
 
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 1, backgroundColor: 'white' }}>
@@ -34,8 +59,8 @@ const HeaderComponent = () => {
           
           {/* Logo and Hamburger Menu */}
           <div className='logo-hamburger'>
-             {/* Navbar Toggle for mobile view */}
-             {isMobile && (
+            {/* Navbar Toggle for mobile view */}
+            {isMobile && (
               <div className='hamburger'>
                 <button onClick={handleMenuToggle} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
                   <span className='navbar-toggler-icon'>
@@ -62,7 +87,6 @@ const HeaderComponent = () => {
                 }}
               />
             </div>
-           
           </div>
 
           {/* Search Bar */}
@@ -78,6 +102,7 @@ const HeaderComponent = () => {
             }}
           >
             <input
+              ref={inputRef}
               style={{
                 border: 'none',
                 width: '100%',
@@ -86,7 +111,8 @@ const HeaderComponent = () => {
                 backgroundColor: 'whitesmoke',
                 padding: '10px',
               }}
-              placeholder='Search For Products,brands...'
+              placeholder='Search For Products, brands...'
+              onFocus={() => setShowModal(true)} // Show modal on focus
             />
             <button
               style={{
@@ -126,8 +152,8 @@ const HeaderComponent = () => {
           </div>
         </div>
 
-         {/* Category Menu */}
-         <div id='category-menu' className='category-menu' style={{ display: isMobile ? 'none' : 'block', marginTop: '10px' }}>
+        {/* Category Menu */}
+        <div id='category-menu' className='category-menu' style={{ display: isMobile ? 'none' : 'block', marginTop: '10px' }}>
           <ul className='category-list'>
             <li><a className='black-text' href='#home'>Store Locator</a></li>
             <li className='separator'>|</li>
@@ -144,6 +170,64 @@ const HeaderComponent = () => {
             <li><a className='black-text' href='#home'>About</a></li>
           </ul>
         </div>
+
+        {/* Modal with images */}
+        {showModal && (
+          <div
+            className='modal'
+            style={{
+              position: 'fixed',
+              top: `${inputTop +10}px`, // Set modal just below input
+              right: '50px',
+              width: '110%',
+              height: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'left',
+              zIndex: 1000,
+            }}
+            onClick={closeModal} // Close modal when clicking outside
+          >
+            <div
+              style={{
+                backgroundColor: 'white',
+                padding: '20px',
+                borderRadius: '10px',
+                width: inputWidth+60,
+                height:'50%',
+                textAlign: 'center',
+                
+              }}
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+            >
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+                {[...Array(4)].map((_, index) => (
+                  <img
+                    key={index}
+                    src={`https://via.placeholder.com/100`} // Replace with your image URLs
+                    alt={`Product ${index}`}
+                    style={{ width: '90px', height: '90px' }}
+                  />
+                ))}
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px', marginTop: '10px' }}>
+                {[...Array(2)].map((_, index) => (
+                  <img
+                    key={index}
+                    src={`https://via.placeholder.com/100`} // Replace with your image URLs
+                    alt={`Product ${index + 4}`}
+                    style={{ width: '90px', height: '90px' }}
+                  />
+                ))}
+              </div>
+              <button onClick={closeModal} style={{ marginTop: '20px', padding: '10px 20px', backgroundColor: '#d86f70', color: 'white', border: 'none', borderRadius: '5px' }}>
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+        
 
         {/* Mobile Menu */}
         {isMobile && (
@@ -206,3 +290,15 @@ const HeaderComponent = () => {
 };
 
 export default HeaderComponent;
+
+
+
+
+
+
+
+
+
+
+
+

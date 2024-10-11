@@ -2,6 +2,7 @@ import CardComponent from './Components/CardComponents';
 import HeaderComponent from './Components/HeaderComponent';
 import Footer from './Components/FooterComponent';
 import FormComponent from './Components/FormComponent';
+import TopBrands from './Components/TopBrand';
 
 import CategoryComponents from './Components/CategoryComponents';
 import BannerSlider from './Components/BannerSlider';
@@ -21,6 +22,7 @@ function App() {
       <HeaderComponent />
       <CategoryComponents />
       <BannerSlider />
+      <TopBrands />
       <CardComponent title="Best Sellers" />
       <CardComponent title="Trending Products" />  
       <OfferComponent />

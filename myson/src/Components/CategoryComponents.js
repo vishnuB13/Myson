@@ -21,15 +21,7 @@ const CategoryComponents = () => {
 
   return (
     <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        padding: '10px',
-        borderBottom: '5px solid whitesmoke',
-        boxShadow: '0.5px 0.5px 1.5px 1px whitesmoke',
-        overflowX: 'auto', // Enable horizontal scrolling
-        whiteSpace: 'nowrap', // Prevents items from wrapping onto the next line
-      }}
+      className='category-top'
     >
       {images.map((imageSrc, index) => (
         <div key={index} style={{ textAlign: 'center', margin: '0 10px' }}>
@@ -37,9 +29,9 @@ const CategoryComponents = () => {
             src={imageSrc}
             className='img-fluid category-image'
             alt={`category-${index}`}
-            style={{ maxWidth: '100px', height: 'auto' }} // Adjust image size as needed
+            style={{ width: '80px', height: '80px' }} // Adjust image size as needed
           />
-          <div className='black-text' style={{ marginTop: '5px',color:'var(--black-12)' }}>
+          <div className='black-text category-text' style={{ marginTop: '5px',color:'var(--black-12)' }}>
             {names[index]} {/* Display the name under each image */}
           </div>
         </div>

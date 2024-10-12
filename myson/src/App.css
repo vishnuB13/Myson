@@ -100,6 +100,33 @@ button {
   background-color: red;
   color: white;
 }
+.modal {
+  
+    position: fixed;
+    right: 50px;
+    width: 110%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    border: solid 3px whitesmoke 
+}
+
+.modal-div{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  height: auto;
+  position: relative;
+}
+.modal-div-row{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px
+}
 #last {
   display: flex;
   justify-content: space-between;
@@ -169,7 +196,27 @@ footer {
   height: 100px;
 }
 
-
+.close-button {
+  position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;  /* Increased the font size */
+    font-weight: bold;
+    cursor: pointer;
+    color: red;
+    z-index: 10;  /* Ensure it's on top of other elements */
+    text-align: left;
+    font-size:large;
+  }
+  
+  .close-button:hover {
+    color: #f00;  /* Red on hover for better visibility */
+    background-color: whitesmoke;
+    border: solid 2px whitesmoke;
+  }
+  
 
 @media (max-width: 768px) {
   .hamburger {
@@ -242,7 +289,12 @@ footer {
     margin: 0px;
     color: #f7f7f7;
   }
-
+  
+  .modal-div-row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px
+  }
   .banner-container {
     padding: 10px;
     margin: 0px;

@@ -3,6 +3,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faHome, faHeart, faUser, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook,faTwitter,faYoutube,faLinkedin,faInstagram } from '@fortawesome/free-brands-svg-icons';
+import products from '../Constants/Products';
 
 const HeaderComponent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -173,60 +174,44 @@ const HeaderComponent = () => {
 
         {/* Modal with images */}
         {showModal && (
-          <div
-            className='modal'
-            style={{
-              position: 'fixed',
-              top: `${inputTop +10}px`, // Set modal just below input
-              right: '50px',
-              width: '110%',
-              height: '100%',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'left',
-              zIndex: 1000,
-            }}
-            onClick={closeModal} // Close modal when clicking outside
-          >
-            <div
-              style={{
-                backgroundColor: 'white',
-                padding: '20px',
-                borderRadius: '10px',
-                width: inputWidth+60,
-                height:'50%',
-                textAlign: 'center',
-                
-              }}
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-            >
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
-                {[...Array(4)].map((_, index) => (
-                  <img
-                    key={index}
-                    src={`https://via.placeholder.com/100`} // Replace with your image URLs
-                    alt={`Product ${index}`}
-                    style={{ width: '90px', height: '90px' }}
-                  />
-                ))}
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px', marginTop: '10px' }}>
-                {[...Array(2)].map((_, index) => (
-                  <img
-                    key={index}
-                    src={`https://via.placeholder.com/100`} // Replace with your image URLs
-                    alt={`Product ${index + 4}`}
-                    style={{ width: '90px', height: '90px' }}
-                  />
-                ))}
-              </div>
-              <button onClick={closeModal} style={{ marginTop: '20px', padding: '10px 20px', backgroundColor: '#d86f70', color: 'white', border: 'none', borderRadius: '5px' }}>
-                Close
-              </button>
-            </div>
+  <div
+    className='modal'
+    style={{
+      top: `${inputTop + 10}px`, // Set modal just below input
+    }}
+    onClick={closeModal} // Close modal when clicking outside
+  >
+    <div
+    className='modal-div'
+      style={{
+        width: inputWidth + 100,
+      }}
+      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+    >
+                    <button className="close-button" onClick={closeModal}>×</button>
+
+      <div className='modal-div-row' >
+        {products.map((product, index) => (
+          <div style={{display:'block'}}>
+          <img
+            key={index}
+            src={product.imageUrl} // Replace with your image URLs
+            alt={`Product ${index}`}
+            style={{ width: '90px', height: '90px', borderRadius: '10px', border: 'solid 2px whitesmoke' }}
+          />
+          <h6 style={{font:'small-caption', color:'black'}}>{product.name}</h6>
           </div>
-        )}
+        ))}
+
+      </div>
+
+     
+      
+    </div>
+  </div>
+)}
+
+
         
 
         {/* Mobile Menu */}
